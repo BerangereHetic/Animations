@@ -1,0 +1,240 @@
+/*Quand on sauvegarde les préfixes se mettent automatiquement en fonction de Can I use pour enlever aller dans "Modifier" et décocher "Auto préfixer durant la sauvegarde" et si on veut modifier les paramètres d'autopréfixer "Modifier" > "Paramètre autopréfixer" */
+
+
+/*Pour changer une couleur plus facilement faire clique droit sur la couleur à changer et "Edition rapide" */
+
+body {
+    background: #eee;
+    font-family: Helvetica, Arial;
+    font-size: 14px;
+    perspective:120px;
+}
+
+a{
+    text-decoration: none;
+    vertical-align: inherit;
+}
+
+a{ /*s'applique sur tous les boutons*/
+    width: 170px;
+    height: 40px;
+    margin: auto;
+    margin-top: 50px;
+    display: flex;
+    text-align: center;
+    border-radius: 50px;
+    border: 2px solid #B6B0BF;
+    color: #B6B0BF;
+    background: #eee;
+    will-change: border;
+    will-change: color;
+    will-change: background;
+    will-change: transform;
+}
+
+a p{ /*s'applique sur tous les boutons*/
+    margin: auto;
+}
+
+/*********
+
+PREMIER BOUTON
+
+*********/
+
+a.premierBouton:hover{
+    color: #eee;
+    background: #B6B0BF;
+    border: 1px solid #eee;
+    transform: scale(1.2);
+    transition: transform 50ms ease;
+}
+
+a.premierBouton.scale1{
+    transform: scale(1);
+}
+
+/*********
+
+DEUXIEME BOUTON
+
+*********/
+a.deuxiemeBouton{
+    transition: transform 50ms ease;
+}
+
+a.deuxiemeBouton.scale2{
+    transform: scale(1.2, 1.2);
+}
+
+a.deuxiemeBouton.color2{
+    background: #B6B0BF;
+    color: #eee;
+}
+
+/*********
+
+ROTATE CARRE
+
+*********/
+
+div.container{
+    perspective: 800px;
+}
+
+div.rotateCarre{
+    width: 200px;
+    height: 200px;
+    margin: auto;
+    margin-top: 50px;
+    margin-bottom: 100px;
+    position: relative;
+}
+
+div.rotateCarre div.carreFront{
+    width: 100%;
+    height: 100%;
+    top: 0%;
+    left: 0%;
+    position: absolute;
+    z-index:1;
+    background: #B6B0BF;
+    backface-visibility:hidden;
+    animation: rotate-carre 2s ease-in-out 2s infinite;
+}
+
+div.rotateCarre div.carreBack{
+    width: 100%;
+    height: 100%;
+    top: 0%;
+    left: 0%;
+    position: absolute;
+    background: #555555;
+    backface-visibility: visible;
+    animation: rotate-carre 2s ease-in-out 2s infinite;
+}
+
+@keyframes rotate-carre{
+    0%{transform: rotateX(0deg) rotateY(0deg);}
+    25%{transform: rotateX(0deg) rotateY(180deg);}
+    50%{transform: rotateX(-180deg) rotateY(180deg);}
+    75%{transform: rotateX(-180deg) rotateY(360deg);}
+    100%{transform: rotateX(0deg) rotateY(360deg);}
+}
+
+/*********
+
+CIRCLES
+
+*********/
+
+div.circles{
+    margin-top: 50px;
+    background: #2C3E50;
+    width: 200px;
+    height: 200px;
+    margin: auto;
+    position: relative;
+}
+
+div.circles div{
+    margin: auto;
+    border-radius: 50px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform-origin: 0 0;
+    will-change: transform;
+}
+
+div.circles div.firstCircle{
+    width: 70px;
+    height: 70px;
+    z-index: 1;
+    background: rgba(221, 224, 227, 0.5);
+    animation: scalemin 1s ease-in-out infinite;
+}
+
+@keyframes scalemin{
+    0%{transform: scale(0) translate(-35px, -35px);}
+    50%{transform: scale(1) translate(-35px, -35px);}
+    100%{transform: scale(0) translate(-35px, -35px);}
+}
+
+div.circles div.secondCircle{
+    width: 30px;
+    height: 30px;
+    background: rgb(221, 224, 227);
+    transform-origin: 0 0;
+    transform: translate(-15px, -15px);
+    z-index:2;
+    animation: scalemax 1s ease-in-out infinite;
+}
+
+@keyframes scalemax{
+    0%{transform: scale(1) translate(-15px, -15px);}
+    50%{transform: scale(0) translate(-15px, -15px);}
+    100%{transform: scale(1) translate(-15px, -15px);}
+}
+
+/*********
+
+RECTANGLES
+
+*********/
+
+div.rectangles{
+    width: 200px;
+    height: 200px;
+    background: #1ABC9C;
+    margin: auto;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+div.rectangles div.rectanglesCenter{
+    position: relative;
+    width: 70px;
+    height: 40px;
+    margin: auto;
+    top: 50%;
+    transform: translate(0px, -20px);
+    text-align: center;
+    
+}
+
+div.rectangles div.rectanglesCenter div{
+    float: left;
+    width: 7px;
+    height: 50px;
+    background: rgb(221, 224, 227);
+    margin-left: 2px;
+    animation: scaleglisse 1.2s ease-in-out infinite;
+}
+
+div.rectangles div.rectanglesCenter div.rect1{
+    animation-delay: 0s;
+    margin-left: 15px;
+}
+
+div.rectangles div.rectanglesCenter div.rect2{
+    animation-delay: 100ms;
+}
+
+div.rectangles div.rectanglesCenter div.rect3{
+    animation-delay: 200ms;
+}
+
+div.rectangles div.rectanglesCenter div.rect4{
+    animation-delay: 300ms;
+}
+
+div.rectangles div.rectanglesCenter div.rect5{
+    animation-delay: 400ms;
+}
+
+@keyframes scaleglisse{
+    0%, 40%, 100%{transform: scaleY(0.4);}
+    20%{transform: scaleY(1);}
+}
+
