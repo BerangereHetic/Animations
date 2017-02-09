@@ -78,14 +78,32 @@ TROISIEME BOUTON
 
 *********/
 a.troisiemeBouton div.fill{
-    transition: transform 1s ease;
+    width: 170px;
+    height: 40px;
+    border-radius: 50px;
+    position: absolute;
+    z-index: 0;
 }
 
-a.troisiemeBouton.color3{
-    background: #B6B0BF;
+@keyframes fill-button{
+    0%{transform: scaleX(0);}
+    100%{transform: scaleX(1); transform-origin: left; background: #B6B0BF;}
+}
+
+a.troisiemeBouton:hover div.fill{
+    animation: fill-button 500ms ease;
+    
+}
+
+a.troisiemeBouton p{
+    position: absolute;
+    z-index: 1;
+    padding: 11px;
+}
+
+a.troisiemeBouton:hover p{
     color: #eee;
 }
-
 /*********
 
 ROTATE CARRE
