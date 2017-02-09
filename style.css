@@ -36,6 +36,10 @@ a p{ /*s'applique sur tous les boutons*/
     margin: auto;
 }
 
+a.scale{
+    transform: scale(1.2, 1.2);
+}
+
 /*********
 
 PREMIER BOUTON
@@ -63,11 +67,21 @@ a.deuxiemeBouton{
     transition: transform 50ms ease;
 }
 
-a.deuxiemeBouton.scale2{
-    transform: scale(1.2, 1.2);
+a.deuxiemeBouton.color2{
+    background: #B6B0BF;
+    color: #eee;
 }
 
-a.deuxiemeBouton.color2{
+/*********
+
+TROISIEME BOUTON
+
+*********/
+a.troisiemeBouton div.fill{
+    transition: transform 1s ease;
+}
+
+a.troisiemeBouton.color3{
     background: #B6B0BF;
     color: #eee;
 }
@@ -208,7 +222,7 @@ div.rectangles div.rectanglesCenter div{
     width: 7px;
     height: 50px;
     background: rgb(221, 224, 227);
-    margin-left: 2px;
+    margin-left: 1.5px;
     animation: scaleglisse 1.2s ease-in-out infinite;
 }
 
